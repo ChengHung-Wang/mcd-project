@@ -50,6 +50,24 @@
                                 title: "php auto_insert函式",
                                 img_src: "img/coding_ver2/auto_insert().png"
                             }
+                        ],
+                        public_fuck_screen: [
+                            {
+                                title: "Google滿江遍野",
+                                img_src: "img/public_fuck/google_search_result.png"
+                            },
+                            {
+                                title: "原來2020還有人不知道多開",
+                                img_src: "img/public_fuck/important_fuck.png"
+                            },
+                            {
+                                title: "部分快照",
+                                img_src: "img/public_fuck/screen_shot2.png"
+                            },
+                            {
+                                title: "幸好有人知道狀況",
+                                img_src: "img/public_fuck/true.png"
+                            }
                         ]
                     }
                 }

@@ -27,7 +27,10 @@
                             <p>利用圖片是流水好的特點，跑個迴圈，逐一訪問每個有可能出現的圖片</p>
                         </div>
                         <div class="col-6">
-                            <img src="img/think_code_1.png" alt="" style="width: 100%;">
+                            <el-image
+                                    src="./img/think_code_1.png"
+                                    :preview-src-list="['./img/think_code_1.png']" fit="cover">
+                            </el-image>
                         </div>
                     </div>
                 </el-tab-pane>
@@ -148,6 +151,7 @@
                     </div>
                 </el-tab-pane>
             </el-tabs>
+            <div class="h30"></div>
             <div class="h30"></div>
             <div class="h30"></div>
         </div>

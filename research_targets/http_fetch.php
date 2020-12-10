@@ -2,7 +2,7 @@
     <div class="col-sm-3">
         <h4>監控流量、封包</h4>
         <p>使用HTTP Catcher</p>
-        <p>這一步的目的在於查出該APP動作邏輯，以及各個操作所對應的API URL</p>
+        <p>為了更能夠確定APP運作方式，使用封包、流量監控的手段達成。透過該手段可得知API請求的訊息、返回的訊息，不僅能夠更了解App運作方式，更能揭發隱含的漏洞</p>
         <br><br>
         <span>技術關鍵</span>
         <hr style="margin: 5px 0;margin-bottom: 15px;">

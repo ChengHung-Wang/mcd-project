@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2>發現過程</h2>
+            <h3>發現過程</h3>
             <hr>
         </div>
         <div class="col-sm-6">

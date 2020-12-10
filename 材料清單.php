@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2>材料清單</h2>
+            <h3>材料清單</h3>
             <hr>
         </div>
         <?php

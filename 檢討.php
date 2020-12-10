@@ -48,6 +48,13 @@
 
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="h30"></div>
+            <div class="h30"></div>
+            <div class="h30"></div>
+        </div>
+    </div>
 </div>
 
 <el-dialog

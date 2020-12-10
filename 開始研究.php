@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2>開始研究</h2>
+            <h3>開始研究</h3>
             <hr>
         </div>
     </div>

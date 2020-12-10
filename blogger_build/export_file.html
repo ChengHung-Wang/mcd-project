@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麥當勞報報深層滲透研究探討</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            font-family: Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+        }
+
+        .hero {
+            padding: 0;
+            display: table;
+            background: url(https://4.bp.blogspot.com/-4FkdprTTEtc/XI0GRi-VJsI/AAAAAAAAHB0/Dty_LSP2sAQPELig_HcOuxAbJHwyi3JHACLcBGAs/s1600/30%25E5%2591%25A8%25E5%25B9%25B4%25E6%2585%25B6%2B%252803%2529.jpg) no-repeat scroll 0 0 / cover;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+            background-position: center;
+            margin-bottom: 10px;
+            height: 100vh;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+        }
+
+        /*-------------------------------------------*/
+        /*  以下是隱藏版權宣告的css
+        /*-------------------------------------------*/
+        a#themeswear {
+            position: fixed;
+        }
+
+        /*-------------------------------------------*/
+        /*  以下是導覽列
+        /*-------------------------------------------*/
+
+        .bg_transparent {
+            background: transparent !important;
+            -webkit-backdrop-filter: blur(0px) !important;
+            backdrop-filter: blur(0px) !important;
+        }
+
+        @media (max-width: 708px) {
+            .phone-bg {
+                background: rgba(0, 0, 0, 0.8);
+                position: fixed;
+                z-index: 09999;
+                min-width: 100%;
+                min-height: 100%;
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+            }
+
+            .navbar-inverse .navbar-nav>li>a {
+                font-size: 18px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                margin: 0 42px;
+                line-height: 3;
+            }
+
+            nav>.nav_magic_black {
+                background: rgba(0, 0, 0, 0.8) !important;
+                animation: navAni 0.8s;
+            }
+
+            .nav_ani {
+                animation: headerAni 0.4s;
+            }
+        }
+
+        @keyframes headerAni {
+            0% {
+                transform: translateY(999px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes navAni {
+            0% {
+                background: rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                background: rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        /*-------------------------------------------*/
+        /*  拷貝過來的css
+        /*-------------------------------------------*/
+
+        /*-------------------------------------------*/
+        /*  About US
+        /*-------------------------------------------*/
+        .section_subtitle {
+            margin-bottom: 7px;
+            padding-left: 7px;
+            font-size: 20px;
+            line-height: 1;
+            color: #aaaaaa;
+            border-left: 3px solid #bfa67a;
+            font-weight: 700;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /*-----------按鈕（for About As ）-------------*/
+        .btn-color-background {
+            -moz-user-select: none;
+            background-color: #bfa67a;
+            border: 1px solid #bfa67a;
+            border-radius: 2px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 1.42857;
+            margin-bottom: 0;
+            padding: 7px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            vertical-align: middle;
+        }
+
+        .home-button a:hover {
+            margin-right: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: #bfa67a;
+            color: white;
+            box-shadow: 1px 1px 10px 0px rgba(221, 221, 221);
+        }
+
+        .home-button>a {
+            margin-right: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: transparent;
+            color: #bfa67a;
+        }
+
+        .parallax-funfactor {
+            padding: 100px 0;
+            background: url(https://4.bp.blogspot.com/-GcG8LvHtkEg/XIUc-72ZSoI/AAAAAAAAG7E/U925Yb_FRvY_2WhSdzvGVxHFNq7ytslsACLcBGAs/s1600/%25E5%25B1%258F%25E5%25B9%2595%25E5%25BF%25AB%25E7%2585%25A7%2B2019-03-10%2B%25E4%25B8%258B%25E5%258D%258810.19.09.png) no-repeat scroll 0 0 / cover;
+        }
+
+        .parallax {
+            position: relative;
+            /* background-attachment: fixed; */
+        }
+
+        @media screen and (min-width:1024px) {
+            .parallax {
+                position: relative;
+                background-attachment: fixed;
+            }
+        }
+
+        .parallax:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: rgba(0, 0, 0, 0.4)
+        }
+
+        .parallax.light-overlay:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: rgba(255, 255, 255, .3)
+        }
+
+        .fun-box i {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .light-txt .sub-title,
+        .light-txt div {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .fun-box .value {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .fun-box .title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 100;
+        }
+
+        /* ============== BLOG ==============  */
+
+        .grid-mid-post {
+
+            -webkit-box-shadow: 0px 0px 40px 0px rgba(221, 221, 221, 1);
+
+            box-shadow: 0px 0px 40px 0px rgba(221, 221, 221, 1);
+
+            background: #f7f7f7;
+
+            border-radius: 15px;
+
+        }
+
+        .format-post {
+
+            position: relative;
+
+            background: #e9e9e9;
+
+            border-top-left-radius: 15px;
+
+            border-top-right-radius: 15px;
+
+            overflow: hidden;
+
+        }
+
+        .meta-post {
+
+            margin-bottom: 20px;
+
+            border-bottom: 1px solid #eee;
+
+            padding-bottom: 15px;
+
+        }
+
+        .post_thumbnail_image {
+
+            overflow: hidden;
+
+            border-top-left-radius: 15px;
+
+            border-top-right-radius: 15px;
+
+            position: relative;
+
+            height: 260px;
+
+        }
+
+        .post_thumbnail_image a {
+
+            display: block;
+
+        }
+
+        .post_thumbnail_image img {
+
+            width: 100%;
+
+            height: 260px;
+
+            object-fit: cover;
+
+        }
+
+        .post_thumbnail_image img:hover {
+
+            opacity: 0.5;
+
+        }
+
+        .info-post {
+
+            margin-bottom: 25px;
+
+            padding: 15px;
+
+            background: #343a40;
+
+            border-radius: 0 0 15px 15px;
+
+        }
+
+        .post-title {
+
+            margin: 0 0 8px 0;
+
+            opacity: 1;
+
+            visibility: visible;
+
+            -webkit-transition: opacity 0.24s ease-in-out;
+
+            transition: opacity 0.24s ease-in-out;
+
+            text-align: center;
+
+            background: #343a40;
+        }
+
+        .post-title a {
+
+            font-size: 18px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 5px;
+
+            font-weight: 600;
+            color: #fff;
+
+            text-decoration: none;
+
+        }
+
+        .meta-post li a:hover,
+
+        .post-title a:hover {
+
+            color: #bfa67a;
+
+        }
+
+        .meta-post li {
+
+            position: relative;
+
+            display: inline-block;
+
+            font-size: 12px;
+
+            line-height: 10px;
+
+            padding-right: 5px;
+
+        }
+
+        .meta-post i {
+
+            color: #bfa67a;
+
+            padding-right: 8px;
+
+            font-size: 12px;
+
+            position: relative;
+
+        }
+
+        .meta-post>*>* {
+
+            margin-bottom: 5px;
+
+        }
+
+        .post_read {
+
+            padding: 0px 0px 20px 0px;
+
+
+
+        }
+
+        .post_read span a {
+
+            padding: 7px 10px;
+
+            background: #eee;
+
+            color: #bfa67a;
+
+            border-radius: 50%;
+
+            margin-left: -10px;
+
+            margin-right: 5px;
+
+        }
+
+        .post_read .more {
+
+            color: #bfa67a;
+
+            padding: 5px 15px;
+
+        }
+
+        iframe.viframe {
+
+            height: 260px;
+
+            width: 100%;
+
+        }
+
+        iframe.viframe:hover {
+
+            opacity: 0.5;
+
+        }
+
+        .section-padding {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        /* 屏幕大於1200px */
+        @media screen and (min-width: 1200px) {
+            .main_img>a {
+                height: 2.6in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -170px;
+            }
+        }
+
+        /* 屏幕小於1200px */
+        @media screen and (max-width: 1200px) {
+            .main_img>a {
+                height: 2.2in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -150px;
+            }
+
+        }
+
+        /* 屏幕小於992px */
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+            .main_img>a {
+                height: 2.5in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -170px;
+            }
+
+        }
+
+
+        @media only screen and (min-width: 560px) and (max-width: 767px) {
+            .main_img>a {
+                height: 3.7in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -280px;
+            }
+
+        }
+
+        /* 屏幕小於420px for iPhone 5.5inch */
+        @media screen and (max-width: 420px) {
+            .main_img>a {
+                height: 2.8in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -210px;
+            }
+
+        }
+
+        /* 屏幕小於375px for iPhone 4.7inch */
+        @media screen and (max-width: 375px) {
+            .main_img>a {
+                height: 2.7in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -170px;
+            }
+
+        }
+
+        /* 屏幕小於320px for iPhone 4inch */
+        @media screen and (max-width: 320px) {
+            .main_img>a {
+                height: 2.2in;
+                overflow: hidden;
+            }
+
+            .main_img>a>img {
+                margin-top: -150px;
+            }
+
+        }
+
+        /* slider css */
+        .carousel-item {
+            min-height: 450px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+
+        /* ============== PRICING ==============  */
+        .price-item {
+            border-radius: 10px 10px 10px 10px;
+            background-color: #ffffff;
+            -webkit-box-shadow: 0px 0px 20px 0px rgba(221, 221, 221, 0.9);
+            box-shadow: 0px 0px 20px 0px rgba(221, 221, 221, 0.9);
+            -webkit-transition: background 0.3s, border 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+            text-align: center;
+            margin: 20px 20px 20px 20px;
+            padding: 70px 50px 70px 50px;
+            width: 100%;
+            position: relative;
+        }
+
+        .pricing_active {
+            background: #222;
+        }
+
+        .price-item:hover {
+            -webkit-box-shadow: 0px 0px 40px 0px rgba(221, 221, 221, 1);
+            box-shadow: 0px 0px 40px 0px rgba(221, 221, 221, 1);
+        }
+
+        .priceing-price {
+            margin-bottom: 20px;
+        }
+
+        .pricing_active .priceing-price h2,
+        .pricing_active ul.pricing-features li,
+        .pricing_active .priceing-price span {
+            color: #dddddd;
+        }
+
+        .priceing-price h2 {
+            color: #4c4c4c;
+            font-size: 65px;
+        }
+
+        .priceing-price span {
+            color: #4c4c4c;
+            font-size: 17px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .pricing_devider {
+            text-align: center;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        .pricing_devider span {
+            border-top-style: solid;
+            border-top-width: 3px;
+            border-top-color: #4c4c4c;
+            width: 20%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul.pricing-features {
+            text-align: left;
+            padding-left: 20%;
+        }
+
+        ul.pricing-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #999;
+        }
+
+        ul.pricing-features li .ion-android-done-all {
+            width: 16px;
+        }
+
+        ul.pricing-features li .feature_list {
+            padding-left: 15px;
+        }
+
+        .pricing-action {
+            padding-top: 10%;
+        }
+
+        .btn-color-background:hover {
+            background: transparent;
+            border-color: #bfa67a;
+            color: #bfa67a;
+            text-decoration: none;
+        }
+
+        .btn-transparent-background {
+            -moz-user-select: none;
+            background-color: transparent;
+            border: 1px solid #bfa67a;
+            border-radius: 2px;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 1.42857;
+            margin-bottom: 0;
+            padding: 7px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            vertical-align: middle;
+        }
+
+        .profile_frame {
+            padding: 15px;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100px;
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            border-radius: 15px;
+            align-items: center;
+            box-shadow: 0 0 20px -5px rgba(100, 100, 100, 0.5);
+            padding: 15px;
+        }
+
+        .profile>img {
+            border-radius: 50%;
+            max-width: 80px;
+            max-height: 80px;
+            min-width: 80px;
+            min-height: 80px;
+            object-fit: cover;
+            box-shadow: 0 0 40px -20px;
+        }
+
+        .profile>h4 {
+            color: #a58a5b;
+            margin-left: 15px;
+            margin-bottom: 0;
+        }
+
+        .profile>h4>span {
+            color: #676767;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .profile>h4>.profile_link>a>span {
+            font-size: 16px;
+            color: #bfa67a;
+        }
+
+        .profile_link {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .h30 {
+            height: 30px;
+        }
+
+        .carousel-item {
+            min-height: 60vh;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #carouselExampleIndicators {
+            margin-bottom: 60px;
+        }
+
+        body {
+            /* background: #eeeeee; */
+        }
+
+        .section_subtitle {
+            margin-bottom: 7px;
+            padding-left: 7px;
+            font-size: 20px;
+            line-height: 1;
+            color: #aaaaaa;
+            border-left: 3px solid #bfa67a;
+            font-weight: 700;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .carousel-caption {
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: initial;
+        }
+
+        .carousel-item:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* background:rgba(0,0,0,0.7); */
+            /*background-image: linear-gradient(-225deg, #A8BFFF 0%, #884D80 100%);*/
+            opacity: 0.3;
+        }
+
+        .go_down {
+            visibility: visible;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-name: bounceInUp;
+            z-index: 999;
+        }
+
+        .home-button>a {
+            margin-right: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: transparent;
+            color: #bfa67a;
+        }
+
+        .btn-color-background {
+            -moz-user-select: none;
+            background-color: #bfa67a;
+            border: 1px solid #bfa67a;
+            border-radius: 2px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 1.42857;
+            margin-bottom: 0;
+            padding: 7px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            vertical-align: middle;
+        }
+
+        .home-button a:hover {
+            text-decoration: none;
+            margin-right: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: #bfa67a;
+            color: white;
+            box-shadow: 1px 1px 10px 0px rgba(100, 100, 100);
+        }
+
+        .c_btn {
+            background: rgba(0, 0, 0, 0);
+            padding: 5px 15px;
+            color: white;
+            border-radius: 50px;
+            border: 1px white solid;
+        }
+
+
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+
+        .snip1447 {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            /* margin: 10px; */
+            min-width: 230px;
+            /* max-width: 315px; */
+            width: 100%;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1.4em;
+            background-color: #141414;
+            border-radius: 15px;
+        }
+
+        .snip1447 * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .snip1447 img {
+            max-width: 100%;
+            vertical-align: top;
+            opacity: 0.85;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .snip1447 figcaption {
+            width: 100%;
+            background-color: #2b2b2b;
+            padding: 25px;
+            position: relative;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .snip1447 figcaption:before {
+            position: absolute;
+            content: '';
+            bottom: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 55px 0 0 400px;
+            border-color: transparent transparent transparent #2b2b2b;
+        }
+
+        .snip1447 figcaption a {
+            padding: 5px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            margin: 10px 0;
+            display: inline-block;
+            opacity: 0.65;
+            width: 47%;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .snip1447 figcaption a:hover {
+            opacity: 1;
+        }
+
+        .snip1447 .profile {
+            border-radius: 50%;
+            position: absolute;
+            bottom: 100%;
+            left: 25px;
+            z-index: 1;
+            max-width: 90px;
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .snip1447 .follow {
+            margin-right: 6%;
+            border-color: #2980b9;
+            color: #2980b9;
+        }
+
+        .snip1447 h2 {
+            margin: 0 0 5px;
+            font-weight: 300;
+            color: #C0A680;
+        }
+
+        .snip1447 h2 span {
+            display: block;
+            font-size: 0.5em;
+            color: #b2b2b2;
+        }
+
+        .snip1447 p {
+            margin: 0 0 10px;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .snip1447:hover:before,
+        .snip1447.hover:before {
+            bottom: 0;
+            box-shadow: 0 0 0px white;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        .snop1447 figure {
+            margin: 0 !important;
+        }
+
+        .snip1447_profile_img {
+            width: 90px;
+            height: 90px;
+            background: none !important;
+            min-width: 90px;
+            max-width: 90px;
+            min-height: 90px;
+            max-height: 90px;
+            object-fit: cover;
+            padding: 0;
+        }
+
+        .ccenter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            bottom: 0;
+            width: 100vh;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .fcc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fac {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .fsc {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .fec {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .fbc {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .demo-image>.block {
+            padding: 30px 0;
+            text-align: center;
+            border-right: 1px solid #eff2f6;
+            display: inline-block;
+            width: 25%;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .demo-image .demonstration,
+        .demo-image__error .demonstration,
+        .demo-image__placeholder .demonstration {
+            display: block;
+            color: #8492a6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .demo-image .block,
+        .demo-image__error .block,
+        .demo-image__placeholder .block {
+            padding: 30px 0;
+            text-align: center;
+            border-right: 1px solid #eff2f6;
+            display: inline-block;
+            width: 25%;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .demo-image .block:last-child,
+        .demo-image__error .block:last-child,
+        .demo-image__placeholder .block:last-child {
+            border-right: none;
+        }
+    </style>
+    <script>
+        let app = null;
+        let sideBarHeight = null;
+        $(function () {
+            sideBarHeight = $('.side_bar').offset().top;
+            $(window).scroll(() => {
+                if ($(window).scrollTop() > $("#carouselExampleSlidesOnly").height()) {
+                    $('.side_bar').css("position", "fixed")
+
+                } else {
+                    $('.side_bar').css("position", "static")
+
+                }
+            })
+            app = new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        nav_items: [
+                            {
+                                "title": "Home",
+                                "icon": "",
+                                "items": [
+                                    "序",
+                                    "注意事項"
+                                ]
+                            },
+                            {
+                                "title": "專題人員",
+                                "icon": "",
+                                "items": [
+                                    "學生", "老師"
+                                ]
+                            },
+                            {
+                                "title": "研究動機",
+                                "icon": "",
+                                "items": []
+                            },
+                            {
+                                "title": "用戶端研究",
+                                "icon": "",
+                                "items": [
+                                    "取得裝置最高權限",
+                                    "訪問App相關資料夾",
+                                    "發現"
+                                ]
+                            },
+                            {
+                                "title": "封包擷取",
+                                "icon": "",
+                                "items": [
+                                    "https加密問題",
+                                    "SSL證書相關問題解決",
+                                    "得到的結果",
+                                    "手動發送請求",
+                                    "由該操作結果所得知的事情",
+                                    "推測App運作原理"
+                                ]
+                            },
+                            {
+                                "title": "對應Web程式規劃，嘗試",
+                                "icon": "",
+                                "items": [
+                                    "第一版",
+                                    "第二版",
+                                    "最終形態強化，增加功能"
+                                ]
+                            },
+                            {
+                                "title": "程式發布",
+                                "icon": "",
+                                "items": [
+                                    "Server託管成本考量",
+                                    "部署規劃"
+                                ]
+                            },
+                            {
+                                "title": "意見 / 市場需求調查",
+                                "icon": "",
+                                "items": [
+                                    "需求度普查結果",
+                                    "網站釣魚連結結果"
+                                ]
+                            },
+                            {
+                                "title": "後續",
+                                "icon": "",
+                                "items": [
+                                    "Dcard事件",
+                                    "通報麥當勞該問題"
+                                ]
+                            },
+                            {
+                                "title": "檢討",
+                                "icon": "",
+                                "items": [
+                                    "漏洞與修復建議",
+                                    "收穫"
+                                ]
+                            },
+                            {
+                                "title": "感謝",
+                                "icon": "",
+                                "items": []
+                            },
+                            {
+                                "title": "材料表",
+                                "icon": "",
+                                "items": []
+                            },
+                            {
+                                "title": "時間軸/貢獻度",
+                                "icon": "",
+                                "items": []
+                            }
+                        ],
+                        modal_explode: {
+                            cache_bug: false,
+                            request_bug: false
+                        },
+                        fake_plan_images: [
+                            'img/fake_plan/plan_list.png',
+                            'img/fake_plan/IMG_7192.png',
+                            'img/fake_plan/IMG_7977.png'
+                        ],
+                        code_core_ver2: [
+                            {
+                                title: "js載入影像",
+                                img_src: "img/coding_ver2/img_road_js.png"
+                            },
+                            {
+                                title: "ajax送回後端處理",
+                                img_src: "img/coding_ver2/find_url().png"
+                            },
+                            {
+                                title: "後端處理方式",
+                                img_src: "img/coding_ver2/write_to_sql.png"
+                            },
+                            {
+                                title: "php auto_insert函式",
+                                img_src: "img/coding_ver2/auto_insert().png"
+                            }
+                        ],
+                        public_fuck_screen: [
+                            {
+                                title: "Google滿江遍野",
+                                img_src: "img/public_fuck/google_search_result.png"
+                            },
+                            {
+                                title: "原來2020還有人不知道多開",
+                                img_src: "img/public_fuck/important_fuck.png"
+                            },
+                            {
+                                title: "部分快照",
+                                img_src: "img/public_fuck/screen_shot2.png"
+                            },
+                            {
+                                title: "幸好有人知道狀況",
+                                img_src: "img/public_fuck/true.png"
+                            }
+                        ]
+                    }
+                }
+            })
+        })
+
+    </script>
+    <style>
+        nav>.el-menu {
+            overflow-y: auto;
+            padding: 40px 0 0;
+            position: sticky;
+            top: 0;
+            bottom: 0;
+            transition: transform .25s ease-out;
+            width: 300px;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
+        style="background: url('img/banner.png')">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <h2 class="display-4">麥當勞報報深層滲透研究探討</h2>
+                    <p class="lead">Life is McDonald's</p>
+                    <span class="badge badge-pill badge-light" style="padding: 5px 15px;font-weight: 500;">團隊型專題 X
+                        新北高工資訊科</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="app">
+        <div class="row">
+            <nav class="col-2 p-0">
+                <el-menu mode="vertical" default-active="1" class="sticky-top side_bar" @open="" @close="">
+                    <el-submenu v-for="(main, index) in nav_items" :key="index" :index="(index + 1).toString()"
+                        v-if="main.items.length >= 1">
+                        <template slot="title">
+                            <i :class="main.icon"></i>
+                            <span v-html="main.title"></span>
+                        </template>
+
+                        <el-menu-item-group>
+                            <!--                            <template slot="title">我還沒想好的複選單架構</template>-->
+                            <el-menu-item v-for="(main_item, index_item) in main.items" :key="index_item"
+                                :index="(index + 1).toString() + `-` + (index_item + 1).toString()" v-html="main_item">
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+
+                    <el-menu-item v-else>
+                        <i :class="main.icon"></i>
+                        <span slot="title" v-html="main.title"></span>
+                    </el-menu-item>
+                </el-menu>
+            </nav>
+            <div class="col-10 float-left">
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section_title">
+                                <div class="section_subtitle">序</div>
+                                <!-- About Title -->
+                                <h3 class="section_main_title">強大威力<strong> 改寫一切</strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            很感謝這一路上幫助這份專案的人，這不是我一個人或是任何一個人能完成的，謝謝你們，使它完整
+                            這是一份有關於麥當勞報報本身App與Server端的研究報告，請勿用於其他非法用途<br>
+                            -- Since 2019-02-14 --
+                        </div>
+                    </div>
+                </div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section_title">
+                                <div class="section_subtitle">研發動機</div>
+                                <!-- About Title -->
+                                <h3 class="section_main_title">當隻長頸鹿<strong> 發現奧妙</strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <p>每天看著麥當勞報報的獎品出來，總覺得那些獎品出來的方式很與眾不同，應該是API發一張圖片來表示抽到的東西，實質在兌換的過程中似乎也沒有驗證
+                                也許這就是個漏洞，曾經經歷過網頁設計、網路安全的我，決定來試試看我的推理是不是真的那樣</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <section class="section section-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12" style="margin-bottom: 15px;">
+                                <div class="section_title">
+                                    <div class="section_subtitle">組員介紹</div>
+                                    <!-- About Title -->
+                                    <h3 class="section_main_title">一切<strong> 皆Pro</strong></h3>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <figure class="snip1447">
+                                    <img src="img/profile_card/10001685_450206955111139_428503122_o.jpg" alt="sample87"
+                                        style="width: 100%;height: 300px;object-fit: cover;min-height: 300px;">
+                                    <figcaption><img src="img/profile_card/2955.jpg" alt="profile-sample4"
+                                            class="profile snip1447_profile_img">
+                                        <h2>梁倫聖<span>查詢、整理資料</span></h2>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <figure class="snip1447">
+                                    <img src="img/profile_card/100716155_131009795245768_9181347184661973315_n.jpg"
+                                        alt="sample87"
+                                        style="width: 100%;height: 300px;object-fit: cover;min-height: 300px;">
+                                    <figcaption><img
+                                            src="img/profile_card/122194502_633790910641811_1913316961747462921_n.jpg"
+                                            alt="profile-sample4" class="profile snip1447_profile_img">
+                                        <h2>王正宏<span>程式撰寫、視覺美術策劃</span></h2>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <figure class="snip1447">
+                                    <img src="img/profile_card/61641027_474147133323661_7569294976694477464_n.jpg"
+                                        alt="sample87"
+                                        style="width: 100%;height: 300px;object-fit: cover;min-height: 300px;">
+                                    <figcaption><img
+                                            src="img/profile_card/101656354_2972461546195332_8986651035928764617_o.jpg"
+                                            alt="profile-sample4" class="profile snip1447_profile_img">
+                                        <h2>陳邑碩<span>撰寫報告、查詢資料</span></h2>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-sm-4 profile_frame">
+                                <div class="profile" style="height: 100px;">
+                                    <img src="img/profile_card/c5716eb9f1fcde5161935e7b35ee003f.jpeg" alt="">
+                                    <h4>
+                                        <span class="badge badge-secondary text-white">指導老師</span>
+                                        <br>
+                                        李宏傑
+                                        <br>
+                                        <p style="color: gray;font-size: 15px;">
+                                            電子學、程式設計
+                                        </p>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 profile_frame">
+                                <div class="profile" style="height: 100px;">
+                                    <img src="img/profile_card/11111.jpg" alt="">
+                                    <h4>
+                                        <span class="badge badge-secondary text-white">指導老師</span>
+                                        <br>
+                                        黃仁伸
+                                        <br>
+                                        <p style="color: gray;font-size: 15px;">
+                                            電子學、程式設計
+                                        </p>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>使用技術</h3>
+                            <hr>
+                            <span class="badge badge-pill badge-warning">Web設計 / 技術</span>
+                            <p>
+                                html, css, JavaScript, PHP, MySQL<br>
+                            </p>
+                            <span class="badge badge-pill badge-danger">安全技術</span>
+                            <p>
+                                SQL Injection（隱碼注入）, http request sniffing（http 封包監聽）, XSS Attack（跨網站腳本攻擊）, DNS劫持
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>發現過程</h3>
+                            <hr>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                有天我發現，每次抽獎都是圖片跟文字一起出來，這讓我很訝異
+                                <br>
+                                所以我推測這應該是一張張的圖片而已<br>
+                                但是照理論來講應該是文字跟圖片分開控制的（如第二張圖）<br><br>
+                                畢竟這樣做才能保證這些兌換項目在不同的設備，<br> 不同的屏幕比例下正常的瀏覽
+                                於是開始了關於麥當勞報報的深入研究
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <!-- screen recording -->
+                            <video controls style="width: 100%;">
+                                <source src="img/loading_screen_video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="img/i_think_like_this.png" alt="" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>開始研究</h3>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- 監控流量、封包 -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4>監控流量、封包</h4>
+                            <p>使用HTTP Catcher</p>
+                            <p>為了更能夠確定APP運作方式，使用封包、流量監控的手段達成。透過該手段可得知API請求的訊息、返回的訊息，不僅能夠更了解App運作方式，更能揭發隱含的漏洞</p>
+                            <br><br>
+                            <span>技術關鍵</span>
+                            <hr style="margin: 5px 0;margin-bottom: 15px;">
+                            <input type="button" class="btn btn-info" value="封包">
+                            <input type="button" class="btn btn-info" value="抓包">
+                            <input type="button" class="btn btn-info" value="HTTP請求">
+                            <br><br>
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="img/fetch_mcd_request/IMG_6363.PNG" alt="" style="width: 100%;">
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="img/fetch_mcd_request/IMG_6364.PNG" alt="" style="width: 100%;">
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="img/fetch_mcd_request/IMG_6350.PNG" alt="" style="width: 100%;">
+                        </div>
+                    </div> <!-- 將抓包所獲得的資料轉至API測試工具中繼續深入研究 -->
+                    <div class="row" style="margin: 60px -15px;min-height: 600px;">
+                        <div class="col-sm-3">
+                            <h4>將抓包所獲得的資料轉至API測試工具中繼續深入研究</h4>
+                            <p>這邊的API測試工具使用 Postman 作為測試工具</p>
+                            <p>目的在於能夠更精準的解析封包的內容、更改封包內容</p>
+
+                            <br><br>
+                            <span>技術關鍵</span>
+                            <hr style="margin: 5px 0;margin-bottom: 15px;">
+                            <input type="button" class="btn btn-info" value="API">
+                            <input type="button" class="btn btn-info" value="JSON">
+                            <input type="button" class="btn btn-info" value="header">
+                        </div>
+
+                        <div class="col-sm-9">
+                            <el-tabs style="height: 500px;">
+                                <el-tab-pane label="API丟回來的資料">
+                                    <img src="img/postman_find1.png" alt="" style="width: 100%;">
+                                </el-tab-pane>
+                                <el-tab-pane label="分析＆推測">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4>分析</h4>
+                                            <p>
+                                                回傳的資料為object，而其中的 <br>
+                                                <strong>results->coupon->object_info->image->url</strong> <br>
+                                                應該為兌換項目的圖片
+                                            </p>
+                                            <br>
+                                            <h4>推測＆發現</h4>
+                                            <p>確定獎項為一張張的圖片</p>
+                                            <p>經由多數次的不同帳號測試(如上截圖)，推測應該是流水號</p>
+                                            <p>照片應該是流水號，而規則應該是「 <strong>P_GXXXXX.jpg</strong> 」</p>
+                                            <p>其中的XXXXX為數字，從00000 ~ 99999 都有可能</p>
+                                            <p>每次用戶端第一次載入這些圖片都會花些時間等待，而第二次幾乎不用等待，表示可能兌換項目有用快取機制</p>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="意外發現">
+                                    <div class="row">
+                                        <div class="col-6 ccenter">
+                                            <h4 style="color: #333;">讚喔訪問這些圖片連token都不用</h4>
+                                            <p>看來非常精彩</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="img/photos_request_test.png" alt="" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="這時我有大膽的想法">
+                                    <div class="row">
+                                        <div class="col-6 ccenter">
+                                            <h2 style="color: #333;">ok... 百萬code飆起來</h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="img/funny/takabear.gif" alt="" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                            </el-tabs>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>程式</h3>
+                            <hr>
+                        </div>
+                        <div class="col-sm-12">
+                            <el-alert title="本程式的目標" type="info" description="進入麥當勞報報的服務器主機當中，利用訪問漏洞撈出主機中所有的圖片檔案"
+                                :show-icon="true" :closable="false">
+                            </el-alert>
+                            <div class="h30"></div>
+                        </div>
+                        <div class="col-sm-2 ccenter">
+                            <h4>嘗試過程</h4>
+                            <p>ver 1</p>
+                        </div>
+                        <div class="col-sm-10" style="min-height: 250px;">
+                            <el-tabs tab-position="left" style="height: 250px;">
+                                <el-tab-pane label="思維">
+                                    <div class="row">
+                                        <div class="col-6 ccenter">
+                                            <p>利用圖片是流水好的特點，跑個迴圈，逐一訪問每個有可能出現的圖片</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <el-image src="./img/think_code_1.png"
+                                                :preview-src-list="['./img/think_code_1.png']" fit="cover">
+                                            </el-image>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="程式預覽">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img src="img/coding/fetch_js_ver_1.png" alt="" class="w-100"
+                                                style="height: 380px; object-fit: cover">
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="問題">
+                                    <div class="row">
+                                        <div class="col-6 ccenter">大量的迴圈，網頁崩潰機率高、甚至會有死機的情況</div>
+                                        <div class="col-6">
+                                            <img src="img/Chrome_err.png" alt="" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="解決＆發現">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <el-collapse accordion value="1">
+                                                <el-collapse-item title="因為這次實驗發現的漏洞" name="1">
+                                                    <p>=> 訪問真的不需要token就可以訪問到這些核心內容</p>
+                                                    <p>
+                                                        => 回傳的http state code 要不200 要不 404，沒有出現例如：401, 403, 429之類的
+                                                        <strong class="text-danger">
+                                                            <br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這表示該API沒有權限驗證也沒有訪問次數限制，表示我們可以無限制的刷洗他們的API來得到主機中的資料。<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目錄爆破將可成為下一步的手法
+                                                        </strong>
+                                                    </p>
+                                                </el-collapse-item>
+                                                <el-collapse-item title="問題解決方案" name="2">
+                                                    <p>
+                                                        A1:
+                                                        使用資料庫作為快取，若嘗試到的連結有返回資料，那麼就將這筆資料的連結寫進資料庫，下次就可以不必花費很多時間再重新抓取曾經抓過的東西
+                                                        <br>
+                                                        A2:
+                                                        使用Server端語言（如php）抓取資料，將處理大型迴圈的程式交給Server端處理，以減輕用戶端的負擔。後端抓取到資料後再以API的形式傳給前端顯示、處理
+                                                    </p>
+                                                </el-collapse-item>
+                                            </el-collapse>
+
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                            </el-tabs>
+                        </div>
+                        <div class="col-12">
+                            <div class="h30"></div>
+                        </div>
+                        <div class="col-sm-2 ccenter">
+                            <h4>嘗試過程</h4>
+                            <p>ver 2</p>
+                        </div>
+                        <div class="col-sm-10" style="min-height: 250px;">
+                            <el-tabs tab-position="left" style="height: 250px;">
+                                <el-tab-pane label="思維">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p>
+                                                最終決定採用寫入資料庫的方式，來解決這樣的問題。<br>
+                                                如果這張照片存在，使用無刷新技術將找到的照片連結存入資料庫
+                                            </p>
+                                        </div>
+                                        <div class="col-2 fsc">
+                                            <span class="badge badge-warning">Request API</span>
+                                            <i class="el-icon-right ml-2"></i>
+
+                                        </div>
+                                        <div class="col-6 fsc flex-wrap">
+                                            <div class="w-100 fsc m-2">
+                                                <span class="badge badge-success">img onload</span>
+                                                <i class="el-icon-right ml-2 mr-2"></i>
+                                                <span class="badge badge-dark">{ajax} save photo url to SQL</span>
+                                            </div>
+                                            <div class="w-100 fsc m-2">
+                                                <span class="badge badge-danger">Request API</span>
+                                                <i class="el-icon-right ml-2 mr-2"></i>
+                                                <div class="badge badge-dark">$(this).hide()</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="關鍵程式">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="demo-image">
+                                                <div v-for="(main, index) in code_core_ver2" class="block">
+                                                    <span class="demonstration">{{ main.title }}</span>
+                                                    <el-image fit="cover" :src="main.img_src"
+                                                        style="width: 150px; height: 150px"
+                                                        :preview-src-list="code_core_ver2.map(e => e.img_src)">
+                                                        <div slot="placeholder" class="image-slot">
+                                                            Loading<span class="dot">...</span>
+                                                        </div>
+                                                    </el-image>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="得到的結局">
+                                    <div class="row">
+                                        <div class="col-4 ccenter">
+                                            <h2>
+                                                我撈到了 <br><strong class="text-danger">370+ <br></strong>張照片
+                                            </h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <el-image fit="cover" src="img/coding_ver2/sql.png" style="width: 100%"
+                                                :preview-src-list="['img/coding_ver2/sql.png']">
+                                                <div slot="placeholder" class="image-slot">
+                                                    Loading<span class="dot">...</span>
+                                                </div>
+                                            </el-image>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="意外發現">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5>
+                                                <strong>
+                                                    不只是P_GXXXXX.jpg
+                                                </strong>
+                                            </h5>
+                                            <hr>
+                                            <span>
+                                                發現「P_GXXXXX.jpg」中的Ｇ被替換成其他英文字API仍也有資料返回！例如：<br>
+                                                <strong class="text-danger">
+                                                    G, V, Q, R, S
+                                                </strong><br>
+                                                使用程式拼接後會使用P_GXXXXX.jpg, P_VXXXXX.jpg, P_QXXXXX.jpg...以此類推來作為目錄爆破的字典檔
+                                            </span>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                            </el-tabs>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>意見/需求度調查</h3>
+                            <hr>
+                            <p>為了確認真的會有人想要用這種東西，特別在網站中加入了假的購買方案來試看看會不會真的有人點進去</p>
+                            <el-alert title="溫馨提示" type="warning"
+                                description="為確保能做到盡可能不損害和德昌公司利益，該網站並未透露漏洞問題。僅單存想要測試會有多少人有這種想法，單純實驗用途，並且在網站下方有說明"
+                                :closable="false" show-icon>
+                            </el-alert>
+                        </div>
+                        <div class="col-6">
+                            <br>
+                            <el-image src="img/fake_plan/plan_list.png" class="shadow-sm"
+                                :preview-src-list="fake_plan_images">
+                                <div slot="placeholder" class="image-slot">
+                                    Loading<span class="dot">...</span>
+                                </div>
+                            </el-image>
+                            <br>
+                            <div class="profile_frame ml-0 mr-0 mt-2 p-0"
+                                onclick="location.href='https://mcd-app.blogspot.com/'">
+                                <div class="profile shadow" style="background-image: none;">
+                                    <img src="img/stuff_list/mcd_app.png" alt="" style="border-radius: 15px;">
+                                    <h4>
+                                        <span class="badge badge-secondary text-white"><i
+                                                class="el-icon-paperclip"></i>網站連結</span>
+                                        <br>
+                                        麥當勞報報Web版
+                                        <br>
+                                        <p style="color: gray;font-size: 15px;">
+                                            https://mcd-app.blogspot.com/
+                                        </p>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <br>
+                            <el-image src="img/fake_plan/IMG_7192.png" class="shadow-sm"
+                                :preview-src-list="fake_plan_images">
+                                <div slot="placeholder" class="image-slot">
+                                    Loading<span class="dot">...</span>
+                                </div>
+                            </el-image>
+                        </div>
+                        <div class="col-3">
+                            <br>
+                            <el-image src="img/fake_plan/IMG_7977.png" class="shadow-sm"
+                                :preview-src-list="fake_plan_images">
+                                <div slot="placeholder" class="image-slot">
+                                    Loading<span class="dot">...</span>
+                                </div>
+                            </el-image>
+                        </div>
+                        <div class="col-12">
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>後續</h3>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <el-tabs tab-position="right" style="height: 280px;">
+                                <el-tab-pane label="序">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="text-danger"><strong>Dcard事件</strong></h5>
+                                            <span>
+                                                這個學術研究用途的實驗網站因為公開於網路中，被大家誤解為我有意要破解麥當勞報報來販售 <br>
+                                                甚至還有人在下面描述關於我的事情，對此我澄清，<br>
+                                                <strong class="text-danger">
+                                                    我不會拿這個網站去麥當勞兌換任何商品，我所兌換的麥當勞報報皆是從AppStore下載的正版App。<br>
+                                                </strong>
+                                                多開是可以做到的，我想這對於有基本資訊素養的人都知道。<br>
+                                                也謝謝身旁的友人願意讓我使用他的帳戶來讓我有更多抽獎機會
+                                            </span><br>
+                                            <span class="badge badge-secondary text-white mt-2"
+                                                onclick="location.href='https://www.dcard.tw/f/trending/p/234727030'">
+                                                <i class="el-icon-paperclip"></i>
+                                                網站連結
+                                            </span>
+                                        </div>
+                                        <div class="col-3">
+                                            <el-image style="height: 100%" src="img/a_lot_app.PNG"
+                                                :preview-src-list="['img/a_lot_app.PNG']" fit="cover">
+                                            </el-image>
+                                        </div>
+                                    </div>
+
+                                </el-tab-pane>
+                                <el-tab-pane label="相關截圖">
+                                    <div class="col-12">
+                                        <div class="demo-image">
+                                            <div v-for="(main, index) in public_fuck_screen" class="block">
+                                                <span class="demonstration">{{ main.title }}</span>
+                                                <el-image fit="cover" :src="main.img_src"
+                                                    style="width: 150px; height: 150px"
+                                                    :preview-src-list="public_fuck_screen.map(e => e.img_src)">
+                                                    <div slot="placeholder" class="image-slot">
+                                                        Loading<span class="dot">...</span>
+                                                    </div>
+                                                </el-image>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="Google搜尋">
+                                    <h6 class="text-secondary"><strong>我的網站直接衝到搜尋排名第二</strong></h6>
+                                    <el-image style="height: 90%" src="img/public_fuck/google_search.jpg"
+                                        :preview-src-list="['img/public_fuck/google_search.jpg']" fit="cover">
+                                    </el-image>
+                                </el-tab-pane>
+                                <el-tab-pane label="網站發生了...">
+                                    <el-image src="./img/public_fuck/viewer_count.png"
+                                        :preview-src-list="['./img/public_fuck/viewer_count.png']" fit="cover">
+                                    </el-image>
+                                </el-tab-pane>
+                            </el-tabs>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                        </div>
+                        <div class="col-12">
+                            <h5 class="text-danger"><strong>通報台灣金拱門相關負責公司</strong></h5>
+                            <span>漏洞報告準備得差不多的時候，我將該問題回報給廠商，請他們多留意。他們也在下午回電，表示會再通知相關部門</span>
+                        </div>
+                        <div class="col-12">
+                            <div class="demo-image__placeholder w-100 mt-2 d-flex">
+                                <div class="block w-50 p-5">
+                                    <span class="demonstration">填寫表單</span>
+                                    <el-image src="img/bug_response/write.png"
+                                        :preview-src-list="['img/bug_response/write.png', 'img/bug_response/after_submit.png']">
+                                        <div slot="placeholder" class="image-slot">
+                                            Loading<span class="dot">...</span>
+                                        </div>
+                                    </el-image>
+                                </div>
+                                <div class="block w-50 p-5">
+                                    <span class="demonstration">送出</span>
+                                    <el-image src="img/bug_response/after_submit.png"
+                                        :preview-src-list="['img/bug_response/write.png', 'img/bug_response/after_submit.png']">
+                                        <div slot="placeholder" class="image-slot">
+                                            Loading<span class="dot">...</span>
+                                        </div>
+                                    </el-image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>檢討</h3>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <h5>漏洞與建議</h5>
+                            <p>
+
+                                <strong class="text-danger fsc">
+                                    問題：API重要資料存取時沒有驗證用戶權限
+                                    <span @click="modal_explode.request_bug = true"
+                                        class="badge badge-pill badge-danger ml-2"><i
+                                            class="el-icon-paperclip"></i></span>
+                                    <br>
+                                </strong>
+                                建議解決方案：訪問該API時，應將token加上，以確保用戶權限並記錄存取時間
+                            </p>
+                            <p>
+                                <strong class="text-danger">
+                                    問題：API 無訪問次數限制
+                                </strong>
+                                建議解決方案：以MVC架構的Laravel 建構之 API 來說，
+                                可以使用中介層(Middleware)限制該用戶在存取資料的次數，
+                                若發生不當存取行為可以對請求回傳 error 429 <br>
+                                現在主流的API如facebook, instagram皆有防止爬蟲大量請求資源的機制
+                            </p>
+                            <p>
+                                <strong class="text-danger">
+                                    問題：App 快取機制bug
+                                    <span @click="modal_explode.cache_bug = true"
+                                        class="badge badge-pill badge-danger ml-2"><i
+                                            class="el-icon-paperclip"></i></span>
+                                    <br>
+                                </strong>
+                                建議解決方案：此bug產生主要有3個原因 <br>
+                                1. App端的重要資料未加密 <br>
+                                2. 讀取的資料並沒有事先經過驗證，導致被替換也能夠正常使用 <br>
+                                3. 要兌換餐點時，雖然Server端會記錄我換的東西但POS機端無法得知內容，僅能依據手機中的圖片出餐 <br>
+                            </p>
+                            <p>
+                                <strong class="text-danger">
+                                    問題：重要檔案（兌換圖資）的檔名易於猜測，加上API沒有訪問次數限制，黑客將可能使用目錄爆破的方式竊取主機中的檔案（如尚未上架的商品資料）<br>
+                                </strong>
+                                建議解決方案：API連結應該採用動態產生方式，例如：<br>https://{api-url}/{user-token(hash)}/{event_id}<br>
+                                存取後連結即失效，若在一段時間沒有請求該資源，連結也應作廢
+                            </p>
+                            <br>
+
+                            <h5>收穫</h5>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                            <div class="h30"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <el-dialog title="Cache Bug" :visible.sync="modal_explode.cache_bug" width="20%" top="0"
+                    custom-class="center">
+                    <video controls class="w-100">
+                        <source src="target_files/cache_bug/!important-app_cache_bug.mov">
+                    </video>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="modal_explode.cache_bug = false">取 消</el-button>
+                        <el-button type="primary" @click="modal_explode.cache_bug = false">確 定</el-button>
+                    </span>
+                </el-dialog>
+
+                <el-dialog title="http request Bug" :visible.sync="modal_explode.request_bug" width="60%" top="0"
+                    custom-class="center">
+                    <img src="target_files/request_bug/request_bug.png" alt="" class="w-100">
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="modal_explode.request_bug = false">取 消</el-button>
+                        <el-button type="primary" @click="modal_explode.request_bug = false">確 定</el-button>
+                    </span>
+                </el-dialog>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>感謝</h3>
+                            <span>依照姓氏筆畫排序</span>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>材料清單</h3>
+                            <hr>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/macosServer.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    macOS Server <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        託管伺服器用（包含VPN, SMB, Web, VNC等Server） </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/XCode icon.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    XCode <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        plist檔案編輯、iOS環境程式測試 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/safari-icon.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Safari <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        程式測試用 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/PS_AppIcon.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Photoshop <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        圖片編輯、修改（Abobe CC PhotoShop 2020 for Mac） </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/AI.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Illustrator <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        網頁版面建構、規劃（Adobe Illustrator CC 2020 for Mac） </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/NOIP.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    NO-IP DUC <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        解決浮動IP使用域名的問題 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/postman.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Postman <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        API測試 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/iToolsPro.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    iTools for Mac <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        iOS端設備傳輸資料用 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/Code.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Visual Studio Code <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        編寫程式 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/mcd_app.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    麥當勞報報 <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        正版麥當勞報報，破解測試 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/iFilza.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    Filza <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        已越獄iOS端的文件瀏覽器 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/mysql.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    MySQL Server <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        資料庫伺服器軟件 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/HTTP_Catcher.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">軟件</span>
+                                    <br>
+                                    HTTP Catcher <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        封包擷取、抓包工具 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/refurb-mbp15touchbar-silver-gallery-2018_GEO_TW_FMT_WHH.jpeg"
+                                    alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">硬件 or 材料</span>
+                                    <br>
+                                    MacBook Pro 15.4inch 2018 <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        編寫、測試 程式 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/Los-Macbook-Pro-de-entre-2011-y-2013-recibiran-un-programa-de-ampliación-de-reparaciones-debido-a-problemas-con-el-chip-de-video.jpg"
+                                    alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">硬件 or 材料</span>
+                                    <br>
+                                    MacBook Pro 13inch <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        Server用機 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/i040gw.png" alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">硬件 or 材料</span>
+                                    <br>
+                                    I040GW <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        AP、網關、路由 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/iPhoneSE.png" alt=""
+                                    style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">硬件 or 材料</span>
+                                    <br>
+                                    iPhone SE <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        麥當勞報報程式測試用 </p>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile_frame">
+                            <div class="profile" style="height: 115px;">
+                                <img src="img/stuff_list/BELNET-0-2m-1m-2m-3m-RJ45-CAT5E-cable-internet-CAT5-Ethernet-Internet-Network-Patch-LAN.jpg"
+                                    alt="" style='border-radius: 0;box-shadow: unset;'>
+                                <h4>
+                                    <span class="badge badge-secondary text-white">硬件 or 材料</span>
+                                    <br>
+                                    RJ45傳輸線 <br>
+                                    <p style="color: gray;font-size: 15px;">
+                                        提供Server與AP有良好的傳輸效果 </p>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <div class="h30"></div>
+                <footer class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Copyright © 1989-2020 mcd-app project 保留一切權利。</p>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

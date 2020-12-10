@@ -141,7 +141,6 @@
             </nav>
             <div class="col-10 float-left">
                 <?php include "persons.php" ?>
-                <?php include "材料清單.php" ?>
                 <?php include "技術.php" ?>
                 <?php include "發現過程.php" ?>
                 <?php include "開始研究.php" ?>
@@ -149,6 +148,8 @@
                 <?php include "意見_需求調查.php" ?>
                 <?php include "後續.php" ?>
                 <?php include "檢討.php" ?>
+                <?php include "感謝.php" ?>
+                <?php include "材料清單.php" ?>
                 <?php include "footer.php" ?>
             </div>
         </div>

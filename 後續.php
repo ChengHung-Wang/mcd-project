@@ -7,20 +7,31 @@
         <div class="col-12">
             <el-tabs tab-position="right" style="height: 280px;">
                 <el-tab-pane label="序">
-                    <h5 class="text-danger"><strong>Dcard事件</strong></h5>
-                    <span>
-                        這個學術研究用途的實驗網站因為公開於網路中，被大家誤解為我有意要破解麥當勞報報來販售 <br>
-                        甚至還有人在下面描述關於我的事情，對此我澄清，<br>
-                        <strong class="text-danger">
-                            我不會拿這個網站去麥當勞兌換任何商品，我所兌換的麥當勞報報皆是從AppStore下載的正版App。<br>
-                        </strong>
-                        多開是可以做到的，我想這對於有基本資訊素養的人都知道。<br>
-                        也謝謝身旁的友人願意讓我使用他的帳戶來讓我有更多抽獎機會
-                    </span><br>
-                    <span class="badge badge-secondary text-white mt-2" onclick="location.href='https://www.dcard.tw/f/trending/p/234727030'">
-                        <i class="el-icon-paperclip"></i>
-                        網站連結
-                    </span>
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="text-danger"><strong>Dcard事件</strong></h5>
+                            <span>
+                                這個學術研究用途的實驗網站因為公開於網路中，被大家誤解為我有意要破解麥當勞報報來販售 <br>
+                                甚至還有人在下面描述關於我的事情，對此我澄清，<br>
+                                <strong class="text-danger">
+                                    我不會拿這個網站去麥當勞兌換任何商品，我所兌換的麥當勞報報皆是從AppStore下載的正版App。<br>
+                                </strong>
+                                多開是可以做到的，我想這對於有基本資訊素養的人都知道。<br>
+                                也謝謝身旁的友人願意讓我使用他的帳戶來讓我有更多抽獎機會
+                            </span><br>
+                            <span class="badge badge-secondary text-white mt-2" onclick="location.href='https://www.dcard.tw/f/trending/p/234727030'">
+                                <i class="el-icon-paperclip"></i>
+                                網站連結
+                            </span>
+                        </div>
+                        <div class="col-3">
+                            <el-image
+                                    style="height: 100%"
+                                    src="img/a_lot_app.PNG"
+                                    :preview-src-list="['img/a_lot_app.PNG']" fit="cover">
+                            </el-image>
+                        </div>
+                    </div>
 
                 </el-tab-pane>
                 <el-tab-pane label="相關截圖">

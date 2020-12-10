@@ -147,7 +147,21 @@
                 </el-tab-pane>
                 <el-tab-pane label="意外發現">
                     <div class="row">
-
+                        <div class="col-12">
+                            <h5>
+                                <strong>
+                                    不只是P_GXXXXX.jpg
+                                </strong>
+                            </h5>
+                            <hr>
+                            <span>
+                                發現「P_GXXXXX.jpg」中的Ｇ被替換成其他英文字API仍也有資料返回！例如：<br>
+                                <strong class="text-danger">
+                                    G, V, Q, R, S
+                                </strong><br>
+                                使用程式拼接後會使用P_GXXXXX.jpg, P_VXXXXX.jpg, P_QXXXXX.jpg...以此類推來作為目錄爆破的字典檔
+                            </span>
+                        </div>
                     </div>
                 </el-tab-pane>
             </el-tabs>

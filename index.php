@@ -154,6 +154,8 @@
                 <?php include "檢討.php" ?>
                 <?php include "感謝.php" ?>
                 <?php include "材料清單.php" ?>
+                <?php include "時間軸_貢獻度.php" ?>
+                <?php include "資料來源.php" ?>
                 <?php include "footer.php" ?>
             </div>
         </div>

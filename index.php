@@ -24,6 +24,7 @@
                 data() {
                     return {
                         nav_items: <?php include "navbar_item.json" ?>,
+                        thanks: <?php include "thanks.json" ?>,
                         modal_explode: {
                             cache_bug: false,
                             request_bug: false
@@ -70,6 +71,9 @@
                             }
                         ]
                     }
+                },
+                created() {
+                    this.thanks.sort((x, y) => new Intl.Collator('zh-Hang-CN').compare(x.name.slice(0, 1), y.name.slice(0, 1)));
                 }
             })
         })

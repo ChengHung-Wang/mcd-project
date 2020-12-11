@@ -903,3 +903,38 @@ footer {
 .demo-image .block:last-child, .demo-image__error .block:last-child, .demo-image__placeholder .block:last-child {
     border-right: none;
 }
+.el-image-viewer__actions {
+    opacity: 1;
+    background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(30px) saturate(180%);
+}
+.thanks_card {
+    margin: 15px!important;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: .2s ease-in-out;
+    max-width: calc(25% - 30px)!important;
+}
+.thanks_card> img {
+    border-radius: 50%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.thanks_card> .description {
+    display: block;
+    margin: 0;
+    height: 45px;
+    overflow-y: auto;
+}
+.thanks_card:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.badge-gold {
+    color: #fff;
+    background-color: #bfa67a;
+}
+.badge-gold-outline {
+    background-color: #fff;
+    color: #bfa67a;
+    border: 1px #bfa67a solid;
+}

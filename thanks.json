@@ -55,7 +55,7 @@
         "description": "麥當勞員工"
       }
     ],
-    "help": "麥當勞相關訊息提供",
+    "help": "提供麥當勞相關訊息",
     "img": "119652579_116539570033221_1793919974636057844_n.jpg",
     "description_modal": false
   },
@@ -69,6 +69,42 @@
     ],
     "help": "網路、安全 相關顧問",
     "img": "118957258_165146908521714_1415431272976101704_n.jpg",
+    "description_modal": false
+  },
+  {
+    "name": "林昭儀",
+    "history": [
+      {
+        "timestamp": "2004-06-21",
+        "description": "tsvb_lzy"
+      }
+    ],
+    "help": "測試帳號提供",
+    "img": "129722686_1093337087745708_6035246350590299252_n.jpg",
+    "description_modal": false
+  },
+  {
+    "name": "溫金舜",
+    "history": [
+      {
+        "timestamp": "1999-01-01",
+        "description": "no description"
+      }
+    ],
+    "help": "測試帳號提供",
+    "img": "14723440_1814926225409321_6631894040096800768_a.jpg",
+    "description_modal": false
+  },
+  {
+    "name": "陳躍方",
+    "history": [
+      {
+        "timestamp": "1999-01-01",
+        "description": "no description"
+      }
+    ],
+    "help": "測試帳號提供",
+    "img": "119742761_975922289486029_3540805808602290320_o.jpg",
     "description_modal": false
   }
 ]

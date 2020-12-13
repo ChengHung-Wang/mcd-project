@@ -3,6 +3,11 @@
     $p = $_POST;
     $c = $_COOKIE;
     $g = $_GET;
+    // from index
+    $file_dir_prefix = [
+        "json" => "./json/",
+        "mcd-app-web" => "./img/mcd-app-web/"
+    ];
     function alert($mess,$url){
 		echo "<script>alert('$mess');location.href='$url'</script>";
 	}

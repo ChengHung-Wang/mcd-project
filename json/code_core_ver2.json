@@ -1,0 +1,18 @@
+[
+  {
+    "title": "js載入影像",
+    "img_src": "img/coding_ver2/img_road_js.png"
+  },
+  {
+    "title": "ajax送回後端處理",
+    "img_src": "img/coding_ver2/find_url().png"
+  },
+  {
+    "title": "後端處理方式",
+    "img_src": "img/coding_ver2/write_to_sql.png"
+  },
+  {
+    "title": "php auto_insert函式",
+    "img_src": "img/coding_ver2/auto_insert().png"
+  }
+]

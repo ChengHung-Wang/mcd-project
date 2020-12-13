@@ -1,0 +1,221 @@
+[
+  {
+    "url": "user/login",
+    "description": "用戶登入",
+    "method": "POST",
+    "error_check": [
+      {
+        "state": 403,
+        "message": "MSG_USER_DISABLED",
+        "description": "用戶已被停用"
+      },
+      {
+        "state": 400,
+        "message": "MSG_MISSING_FIELD",
+        "description": "傳參有缺漏"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      }
+    ]
+  },
+  {
+    "url": "user/logout",
+    "description": "用戶登出",
+    "method": "POST",
+    "error_check": [
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      }
+    ]
+  },
+  {
+    "url": "coupon/get_detail",
+    "description": "取得目前優惠券",
+    "method": "POST",
+    "error_check": [
+      {
+        "state": 403,
+        "message": "MSG_PERMISSION_DENY",
+        "description": "無權限、權限不足"
+      },
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 403,
+        "message": "MSG_USER_DISABLED",
+        "description": "用戶已被停用"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      }
+    ]
+  },
+  {
+    "url": "coupon/images/{image_hash}",
+    "description": "取得優惠券圖片",
+    "method": "GET",
+    "error_check": [
+      {
+        "state": 403,
+        "message": "MSG_PERMISSION_DENY",
+        "description": "無權限、權限不足"
+      },
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 400,
+        "message": "MSG_MISSING_FIELD",
+        "description": "傳參有缺漏"
+      },
+      {
+        "state": 403,
+        "message": "MSG_USER_DISABLED",
+        "description": "用戶已被停用"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      },
+      {
+        "state": 404,
+        "message": "MSG_IMAGE_NOT_EXISTS",
+        "description": "請求資源不存在"
+      },
+      {
+        "state": 404,
+        "message": "MSG_INVALID_URL",
+        "description": "已經失效的連結"
+      }
+    ]
+  },
+  {
+    "url": "coupon/today",
+    "description": "請求當日優惠",
+    "method": "GET",
+    "error_check": [
+      {
+        "state": 403,
+        "message": "MSG_PERMISSION_DENY",
+        "description": "無權限、權限不足"
+      },
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 403,
+        "message": "MSG_USER_DISABLED",
+        "description": "用戶已被停用"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      },
+      {
+        "state": 404,
+        "message": "MSG_IMAGE_NOT_EXISTS",
+        "description": "請求資源不存在"
+      },
+      {
+        "state": 404,
+        "message": "MSG_INVALID_URL",
+        "description": "已經失效的連結"
+      }
+    ]
+  },
+  {
+    "url": "coupon/{coupon_id}/exchange",
+    "description": "優惠券兌換",
+    "method": "PUT",
+    "error_check": [
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 403,
+        "message": "MSG_USER_DISABLED",
+        "description": "用戶已被停用"
+      },
+      {
+        "state": 400,
+        "message": "MSG_MISSING_FIELD",
+        "description": "傳參有缺漏"
+      },
+      {
+        "state": 429,
+        "message": "MSG_TOO_MUCH_REQUEST",
+        "description": "單一時段內過多請求"
+      },
+      {
+        "state": 404,
+        "message": "MSG_IMAGE_NOT_EXISTS",
+        "description": "請求資源不存在"
+      },
+      {
+        "state": 409,
+        "message": "MSG_COUPON_HAS_EXCHANGE",
+        "description": "時段失效"
+      },
+      {
+        "state": 409,
+        "message": "MSG_INVALID_COUPON_TIMESTAMP",
+        "description": "該條碼已超過兌換時效"
+      }
+    ]
+  },
+  {
+    "url": "coupon/{coupon_hash}/pos",
+    "description": "POS機台確認兌換",
+    "method": "POST",
+    "error_check": [
+      {
+        "state": 401,
+        "message": "MSG_INVALID_TOKEN",
+        "description": "token 錯誤"
+      },
+      {
+        "state": 400,
+        "message": "MSG_MISSING_FIELD",
+        "description": "傳參有缺漏"
+      },
+      {
+        "state": 404,
+        "message": "MSG_IMAGE_NOT_EXISTS",
+        "description": "請求資源不存在"
+      },
+      {
+        "state": 409,
+        "message": "MSG_COUPON_HAS_EXCHANGE",
+        "description": "時段失效"
+      },
+      {
+        "state": 409,
+        "message": "MSG_INVALID_COUPON_TIMESTAMP",
+        "description": "該條碼已超過兌換時效"
+      }
+    ]
+  }
+]

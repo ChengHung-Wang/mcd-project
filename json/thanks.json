@@ -106,5 +106,25 @@
     "help": "測試帳號提供",
     "img": "119742761_975922289486029_3540805808602290320_o.jpg",
     "description_modal": false
+  },
+  {
+    "name": "葉伯亨",
+    "history": [
+      {
+        "timestamp": "2018-11-09",
+        "description": "WorldSkills Asia 2018 資訊技術 金牌"
+      },
+      {
+        "timestamp": "2019-09-18",
+        "description": "第49屆全國技能競賽 09-資訊技術 第一名"
+      },
+      {
+        "timestamp": "2020-10-21",
+        "description": "第46屆 WorldSkills 09-資訊技術 備選國手"
+      }
+    ],
+    "help": "Office 顧問",
+    "img": "17265503_309784902769593_352790404694802432_a.jpg",
+    "description_modal": false
   }
 ]

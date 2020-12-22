@@ -37,10 +37,15 @@
                 },
                 created() {
                     this.thanks.sort((x, y) => new Intl.Collator('zh-Hang-CN').compare(x.name.slice(0, 1), y.name.slice(0, 1)));
+
+
                 },
                 methods: {
                     apiIndex(index) {
                         return "API " + ((index + 1).toString().padStart(2, "00"))
+                    },
+                    scroll(position) {
+                        console.log(position);
                     }
                 }
             })

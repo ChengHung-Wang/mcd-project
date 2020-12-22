@@ -39,8 +39,44 @@
     "name": "陳錫齡",
     "history": [
       {
-        "timestamp": "1997",
+        "timestamp": "1997-01-01",
         "description": "國立臺北科技大學技術及職業教育研究所"
+      },
+      {
+        "timestamp": "2017-09",
+        "description": "44屆 WorldSkills [17]Web Technologies 中華台北 備取國手指導老師"
+      },
+      {
+        "timestamp": "2017-09",
+        "description": "44屆 WorldSkills [17]Web Technologies 中華台北 銀牌 指導老師"
+      },
+      {
+        "timestamp": "2019-09",
+        "description": "45屆 WorldSkills [09]IT Software Solutions for Business 金牌 指導老師"
+      },
+      {
+        "timestamp": "2019-09",
+        "description": "45屆 WorldSkills [17]Web Technologies 中華台北 銀牌 指導老師"
+      },
+      {
+        "timestamp": "2019-09",
+        "description": "45屆 WorldSkills [39]IT Network Systems Administration 中華台北 優勝 指導老師"
+      },
+      {
+        "timestamp": "2022-09",
+        "description": "46屆 WorldSkills [09]IT Software Solutions for Business 中華台北 備取國手 指導老師"
+      },
+      {
+        "timestamp": "2022-09",
+        "description": "46屆 WorldSkills [17]Web Technologies 中華台北 備取國手 指導老師"
+      },
+      {
+        "timestamp": "2022-09",
+        "description": "46屆 WorldSkills [17]Web Technologies 中華台北 正取國手 指導老師"
+      },
+      {
+        "timestamp": "2022-09",
+        "description": "46屆 WorldSkills [53]Cloud Computing 中華台北 備取國手 指導老師"
       }
     ],
     "help": "校稿、協助支援",
@@ -89,6 +125,10 @@
       {
         "timestamp": "1999-01-01",
         "description": "no description"
+      },
+      {
+        "timestamp": "2013-02-31",
+        "description": "麥當勞資深消費者"
       }
     ],
     "help": "測試帳號提供",

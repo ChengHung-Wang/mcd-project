@@ -22,14 +22,16 @@
                 v-for="(main_item, index_item) in main.items"
                 :key="index_item"
                 :index="(index + 1).toString() + `-` + (index_item + 1).toString()"
-                v-html="main_item"
+                v-html="main_item" :href="'#' + main_item"
+                class="localhost"
+                @click="scroll('localhost')"
             >
             </el-menu-item>
         </el-menu-item-group>
     </el-submenu>
 
-    <el-menu-item v-else>
+    <el-menu-item :href="'#' + main" @click="scroll('blabla')" v-else>
         <i :class="main.icon"></i>
-        <span slot="title" v-html="main.title"></span>
+        <span slot="title" v-html="main.title" ></span>
     </el-menu-item>
 </el-menu>

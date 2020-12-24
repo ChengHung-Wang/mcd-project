@@ -32,7 +32,9 @@
                         fake_plan_images: <?php include $file_dir_prefix["json"] . "fake_plan_images.json" ?>,
                         code_core_ver2: <?php include $file_dir_prefix["json"] . "code_core_ver2.json" ?>,
                         public_fuck_screen: <?php include $file_dir_prefix["json"] . "public_fuck_screen.json" ?>,
-                        api_lists: <?php include $file_dir_prefix["json"] . "mcd-api-fix-list.json" ?>
+                        api_lists: <?php include $file_dir_prefix["json"] . "mcd-api-fix-list.json" ?>,
+                        project_timestamp: <?php include $file_dir_prefix["json"] . "project_timestamp.json" ?>,
+                        reference_source: <?php include $file_dir_prefix["json"] . "reference_source.json" ?>
                     }
                 },
                 created() {
@@ -81,7 +83,7 @@
                 <?php include "意見_需求調查.php" ?>
                 <?php include "後續.php" ?>
                 <?php include "檢討.php" ?>
-                <?php include "改良.php" ?>
+                <?php // include "改良.php" ?>
                 <?php include "感謝.php" ?>
                 <?php include "材料清單.php" ?>
                 <?php include "時間軸_貢獻度.php" ?>

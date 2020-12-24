@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Vue.js 建置與運行",
+    "description": "針對套件 Vue 的操作手冊",
+    "source": "978-986-476-983-4"
+  },
+  {
+    "title": "JSON 實務手冊",
+    "description": "JSON格式學習用，應用於API的資料解讀能力",
+    "source": "978-986-476-636-9"
+  },
+  {
+    "title": "Web API 建構與設計",
+    "source": "978-986-592-059-0",
+    "description": "API觀念學習"
+  },
+  {
+    "title": "JavaScript實務與應用",
+    "source": "978-986-476-785-5",
+    "description": "JavaScript語言學習"
+  },
+  {
+    "title": "Git 團隊使用手冊",
+    "source": "978-986-476-245-3",
+    "description": "團隊Git版本控制、學習"
+  },
+  {
+    "title": "CSS大全",
+    "source": "978-986-476-991-9",
+    "description": "作為CSS字典、CSS範例程式查詢"
+  },
+  {
+    "title": "Element-UI Document",
+    "source": "https://element.eleme.cn/#/zh-CN",
+    "description": "前端套件 Element-UI 文檔、範例參考"
+  },
+  {
+    "title": "Bootstrap Document",
+    "source": "https://getbootstrap.com/",
+    "description": "前端套件 Bootstrap 文檔、參考範例"
+  },
+  {
+    "title": "MDN Web Document",
+    "source": "https://developer.mozilla.org/zh-CN/",
+    "description": "JavaScript, CSS, html 開發者Document，程式範例"
+  }
+]

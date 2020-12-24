@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2019-02-27",
+    "description": "發現用戶端快取漏洞"
+  },
+  {
+    "date": "2019-08-21",
+    "description": "發現Server端目錄爆破漏洞"
+  },
+  {
+    "date": "2019-08-24",
+    "description": "解析封包內容、推測規則"
+  },
+  {
+    "date": "2019-08-25",
+    "description": "帶有GUI的目錄爆破爬蟲開發"
+  },
+  {
+    "date": "2019-12-21",
+    "description": "網站文案準備，強化GUI"
+  },
+  {
+    "date": "2020-02-25",
+    "description": "程式性能優化、資料庫規劃"
+  },
+  {
+    "date": "2020-02-29",
+    "description": "API滲透"
+  },
+  {
+    "date": "2020-06-17",
+    "description": "項目專題化"
+  },
+  {
+    "date": "2020-07-25",
+    "description": "fake plan實驗開始、網站上架測試"
+  },
+  {
+    "date": "2020-08-02",
+    "description": "加入Apple高斯模糊渲染算法"
+  },
+  {
+    "date": "2020-11-03",
+    "description": "Dcard事件"
+  },
+  {
+    "date": "2020-12-09",
+    "description": "通報麥當勞官方單位"
+  },
+  {
+    "date": "2021-01-01",
+    "description": "海報製作、印出"
+  },
+  {
+    "date": "2021-01-05",
+    "description": "專題報吿最後確認, 印刷、裝訂"
+  },
+  {
+    "date": "2021-01-08",
+    "description": "校內專題競賽"
+  }
+]
